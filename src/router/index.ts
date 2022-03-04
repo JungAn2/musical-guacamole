@@ -1,12 +1,17 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 
 import Index from '../views/Index.vue'
+import Register from '../views/Register.vue'
 
 const routes: Array<RouteRecordRaw> = [
 	{
 		path: '/',
 		component: Index,
-	}
+	},
+	{
+		path: '/register',
+		component: Register
+	},
 ]
 
 const router = createRouter({
