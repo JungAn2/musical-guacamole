@@ -1,40 +1,36 @@
 <template>
-  <q-layout view="hHh lpR lff">
-    <q-header elevated class="bg-primary text-white">
-      <q-toolbar class="row justify-between">
-        <q-div class="col row justify-start">
-          <q-btn color="secondary"
-            ><span class="q-mr-md material-icons"> assignment </span
-            >Projects</q-btn
-          >
-        </q-div>
-        <q-toolbar-title class="col">
-          <q-btn flat to="/">
-          <q-avatar>
-            <span class="material-icons"> schedule </span>
-          </q-avatar>
-          Todo App
+  <router-view
+    style="position: absolute; top: 0; left: 0; width: 100vw; height: 100vh"
+  />
+  <div class="row fixed-bottom z-max">
+    <div class="col" />
+    <div class="col-6">
+      <div class="row justify-center">
+        <div class="col float-right">
+          <q-btn round class="q-ma-sm" to="">
+            <q-tooltip>Project</q-tooltip>
           </q-btn>
-        </q-toolbar-title>
-        <q-div class="col row justify-end">
-          <q-btn color="secondary" class="q-ma-xs" to="/register"
-            ><span class="q-mr-md material-icons"> fingerprint </span>
-            Register</q-btn
-          >
-          <q-btn color="secondary" class="q-ma-xs"
-            ><span class="q-mr-md material-icons"> login </span>Login</q-btn
-          >
-          <q-btn color="secondary" class="q-ma-xs"
-            ><span class="q-mr-md material-icons"> logout </span>Logout</q-btn
-          >
-        </q-div>
-      </q-toolbar>
-    </q-header>
-
-    <q-page-container>
-      <router-view />
-    </q-page-container>
-  </q-layout>
+        </div>
+        <div class="col-1">
+          <q-btn round size="lg" class="q-ma-sm q-mb-lg" to="/">
+            <q-tooltip>Todo</q-tooltip>
+          </q-btn>
+        </div>
+        <div class="col">
+            <q-btn round class="col q-ma-sm" to="/register">
+              <q-tooltip>Register</q-tooltip>
+            </q-btn>
+            <q-btn round class="col q-ma-sm">
+              <q-tooltip>Login</q-tooltip>
+            </q-btn>
+            <q-btn round class="col q-ma-sm hidden">
+              <q-tooltip>Logout</q-tooltip>
+            </q-btn>
+        </div>
+      </div>
+    </div>
+    <div class="col" />
+  </div>
 </template>
 
 <style>
