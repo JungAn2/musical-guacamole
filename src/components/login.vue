@@ -4,6 +4,7 @@
     <q-card class="col" bordered>
       <q-form>
         <div class="col">
+          <h4>Login</h4>
           <q-input
             v-model="UserEmail"
             type="text"

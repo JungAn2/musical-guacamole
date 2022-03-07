@@ -1,9 +1,10 @@
 <template>
   <div class="row items-center" color="dark">
-    <div class="col"/>
+    <div class="col" />
     <q-card class="col" bordered>
-      <q-form>
+      <q-form @keyup.enter="enterSubmit">
         <div class="col">
+          <h4>Register</h4>
           <q-input v-model="email" type="email" class="q-ma-lg" label="Email" />
           <q-input
             v-model="username"
@@ -17,25 +18,42 @@
             class="q-ml-lg"
             label="Password"
           />
-          <q-btn size="lg" class="q-ma-lg">Submit</q-btn>
+          <q-btn size="lg" class="q-ma-lg" @click="handleSubmit">Submit</q-btn>
         </div>
       </q-form>
     </q-card>
-    <div class="col"/>
+    <div class="col">
+      <q-card>
+        <div class="col">
+          <h3>Check for error card</h3>
+          <h4>email:{{ auth.user.registerEmail }}</h4>
+          <h4>username:{{ auth.user.registerUsername }}</h4>
+          <h4>password:{{ auth.user.registerPassword }}</h4>
+        </div>
+      </q-card>
+    </div>
   </div>
 </template>
 
 
-<script>
-import { ref } from "vue";
+<script setup>
+import { authStore } from "../stores/authentication";
+import { onMounted, ref } from "vue";
+import { event } from "quasar";
 
-export default {
-  setup() {
-    return {
-      email: ref(""),
-      username: ref(""),
-      password: ref(""),
-    };
-  },
+/**
+ * Reactive variable for input forms
+ */
+const email = ref("");
+const username = ref("");
+const password = ref("");
+
+const auth = authStore();
+const handleSubmit = () => {
+  auth.setRegisterEmail(email.value);
+  auth.setRegisterUsername(username.value);
+  auth.setRegisterPassword(password.value);
 };
+
+
 </script>
