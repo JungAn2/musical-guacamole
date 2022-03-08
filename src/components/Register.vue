@@ -1,7 +1,7 @@
 <template>
-  <div class="row items-center" color="dark">
+  <div class="row items-center" filled color="white">
     <div class="col" />
-    <q-card class="col" bordered>
+    <q-card class="col z-top" bordered>
       <q-form @keyup.enter="enterSubmit">
         <div class="col">
           <h4>Register</h4>
@@ -54,6 +54,10 @@ const handleSubmit = () => {
   auth.setRegisterUsername(username.value);
   auth.setRegisterPassword(password.value);
 };
+
+const register = (commit)=>{
+  
+}
 
 
 </script>

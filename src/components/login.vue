@@ -1,7 +1,7 @@
 <template>
   <div class="row items-center" color="dark">
     <div class="col"/>
-    <q-card class="col" bordered>
+    <q-card class="col z-top" bordered>
       <q-form>
         <div class="col">
           <h4>Login</h4>

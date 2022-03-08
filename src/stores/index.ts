@@ -6,9 +6,12 @@ export default {
     strict: true,
     setup() {
         const auth = authStore
-     
+        const baseUrl = 'api'
+        
+
         return {
             auth,
+            baseUrl,
         }
         
     }
